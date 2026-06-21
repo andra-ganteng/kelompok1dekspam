@@ -21,6 +21,12 @@ print("PORT =", repr(os.getenv("MYSQLPORT")))
 print("USER =", repr(os.getenv("MYSQLUSER")))
 print("DB =", repr(os.getenv("MYSQLDATABASE")))
 
+import os
+
+for k, v in os.environ.items():
+    if "MYSQL" in k or "DB" in k:
+        print(k, "=", v)
+
 # Load model dengan path absolut
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 model_path = os.path.join(BASE_DIR, 'model_sms_pintar.joblib')
