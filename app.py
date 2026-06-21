@@ -28,6 +28,23 @@ for k, v in os.environ.items():
     if "MYSQL" in k:
         print(k, "=", repr(v))
 
+import MySQLdb
+
+try:
+    conn = MySQLdb.connect(
+        host=os.getenv("MYSQLHOST"),
+        port=int(os.getenv("MYSQLPORT")),
+        user=os.getenv("MYSQLUSER"),
+        passwd=os.getenv("MYSQLPASSWORD"),
+        db=os.getenv("MYSQLDATABASE")
+    )
+
+    print("✅ Database Connected")
+    conn.close()
+
+except Exception as e:
+    print("❌ Database Error:", e)
+
 # Load model dengan path absolut
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 model_path = os.path.join(BASE_DIR, 'model_sms_pintar.joblib')
