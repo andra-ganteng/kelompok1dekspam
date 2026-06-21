@@ -19,7 +19,7 @@ mysql = MySQL(app)
 print("HOST =", repr(os.getenv("MYSQLHOST")))
 print("PORT =", repr(os.getenv("MYSQLPORT")))
 print("USER =", repr(os.getenv("MYSQLUSER")))
-print("DB =", repr(os.getenv("MYSQLDATABASE"))
+print("DB =", repr(os.getenv("MYSQLDATABASE")))
 
 # Load model dengan path absolut
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
