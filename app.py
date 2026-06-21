@@ -13,7 +13,12 @@ app.config['MYSQL_HOST'] = os.getenv('MYSQLHOST')
 app.config['MYSQL_USER'] = os.getenv('MYSQLUSER')
 app.config['MYSQL_PASSWORD'] = os.getenv('MYSQLPASSWORD')
 app.config['MYSQL_DB'] = os.getenv('MYSQLDATABASE')
-app.config['MYSQL_PORT'] = int(os.getenv('MYSQLPORT', '3306'))
+mysql_port = os.getenv('MYSQLPORT')
+
+if not mysql_port:
+    mysql_port = 3306
+
+app.config['MYSQL_PORT'] = int(mysql_port)
 
 mysql = MySQL(app)
 print("MYSQLHOST =", os.getenv("MYSQLHOST"))
