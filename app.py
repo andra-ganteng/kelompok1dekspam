@@ -21,10 +21,10 @@ if not mysql_port:
 app.config['MYSQL_PORT'] = int(mysql_port)
 
 mysql = MySQL(app)
-print("MYSQLHOST =", os.getenv("MYSQLHOST"))
-print("MYSQLPORT =", os.getenv("MYSQLPORT"))
-print("MYSQLUSER =", os.getenv("MYSQLUSER"))
-print("MYSQLDATABASE =", os.getenv("MYSQLDATABASE"))
+print("HOST =", repr(os.getenv("MYSQLHOST")))
+print("PORT =", repr(os.getenv("MYSQLPORT")))
+print("USER =", repr(os.getenv("MYSQLUSER")))
+print("DB =", repr(os.getenv("MYSQLDATABASE"))
 
 # Load model dengan path absolut
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
