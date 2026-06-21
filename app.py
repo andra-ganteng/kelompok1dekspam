@@ -20,6 +20,7 @@ print("HOST =", repr(os.getenv("MYSQLHOST")))
 print("PORT =", repr(os.getenv("MYSQLPORT")))
 print("USER =", repr(os.getenv("MYSQLUSER")))
 print("DB =", repr(os.getenv("MYSQLDATABASE")))
+print("MYSQL_URL =", os.getenv("MYSQL_URL"))
 
 import os
 
