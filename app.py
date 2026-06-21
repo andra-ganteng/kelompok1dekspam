@@ -23,9 +23,10 @@ print("DB =", repr(os.getenv("MYSQLDATABASE")))
 
 import os
 
+print("ALL MYSQL ENV:")
 for k, v in os.environ.items():
-    if "MYSQL" in k or "DB" in k:
-        print(k, "=", v)
+    if "MYSQL" in k:
+        print(k, "=", repr(v))
 
 # Load model dengan path absolut
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
